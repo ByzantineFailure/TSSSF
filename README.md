@@ -18,3 +18,6 @@ Installing RVM (Windows -> cygwin, discouraged):   http://blog.developwithpassio
 Installing RVM (Mac OSX): https://jewelrybox.unfiniti.com/
 
 Installing and running rails: http://railsapps.github.io/installing-rails.html
+
+
+For my own reference and those who may want it: https://www.honeybadger.io/blog/2013/12/11/beginners-guide-to-angular-js-rails
