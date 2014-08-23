@@ -4,21 +4,15 @@ TSSSF
 Angular/Rails implementation of an MLP card game.
 
 
-Some notes for new folks
+Dev Environment Notes
 =====
-For the adventurous, you can install rvm on windows/mac via cygwin.  If you're doing this on linux just... you know, get it.
+We will be using Ruby 2.1.2 with Rails 4.  I HIGHLY recommend developing on linux.  I am fairly certain that our websocket library (websocket-rails) does not run without the hiredis gem installed.  While we will not be leveraging the functionality in websocket-rails that requires hiredis, we do plan on using redis for a significant portion of our functionality.
 
-For the less adventurous, just use railsinstaller: http://railsinstaller.org/en
 
-RVM INSTALL ON WINDOWS INSTRUCTIONS: 
-  http://blog.developwithpassion.com/2012/03/30/installing-rvm-with-cygwin-on-windows/
-  
-In addition to the cygwin packages listed there, please also ensure you get:
-  sqlite3
-  autoconf
-  automake
-  bison
-  m4
-  mingw-i686-gcc-core
-  mingw-x86_64-gcc-core
+I also sincerely recommend installing Ruby through RVM:
 
+Installing RVM (Linux): http://rvm.io/rvm/install
+Installing RVM (Windows -> cygwin, discouraged):   http://blog.developwithpassion.com/2012/03/30/installing-rvm-with-cygwin-on-windows/
+Installing RVM (Mac OSX): https://jewelrybox.unfiniti.com/
+
+Installing and running rails: http://railsapps.github.io/installing-rails.html
