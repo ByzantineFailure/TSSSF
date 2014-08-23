@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="TSSSF">
 <head>
-  <title>TSSSF</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Twilight Sparkle's Secret Shipfic Folder</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<div ng-view>
+		<%= yield %>
+	</div>
 </body>
 </html>
