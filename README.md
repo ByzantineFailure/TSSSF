@@ -12,7 +12,9 @@ We will be using Ruby 2.1.2 with Rails 4.  I HIGHLY recommend developing on linu
 I also sincerely recommend installing Ruby through RVM:
 
 Installing RVM (Linux): http://rvm.io/rvm/install
+
 Installing RVM (Windows -> cygwin, discouraged):   http://blog.developwithpassion.com/2012/03/30/installing-rvm-with-cygwin-on-windows/
+
 Installing RVM (Mac OSX): https://jewelrybox.unfiniti.com/
 
 Installing and running rails: http://railsapps.github.io/installing-rails.html
