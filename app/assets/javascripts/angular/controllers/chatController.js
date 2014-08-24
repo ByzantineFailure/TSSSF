@@ -17,6 +17,7 @@ angular.module('TSSSF').controller('chatController',
 		if($scope.messages.length > MAX_MESSAGES_IN_CHAT) {
 			$scope.messages.pop();
 		}
+		//Force Angular to re-evaluate frontend bindings.
 		$scope.$digest();
 	};
 	
