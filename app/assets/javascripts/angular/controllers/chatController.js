@@ -13,10 +13,11 @@ angular.module('TSSSF').controller('chatController',
 	//Socket event handlers
 	$scope.getMessage = function(message) {
 		console.log("Received message reply: " + message.message);
-		$scope.messages.push(message.message);
+		$scope.messages.push({ message: message.message, timestamp: new Date() } );
 		if($scope.messages.length > MAX_MESSAGES_IN_CHAT) {
 			$scope.messages.shift();
 		}
+		$scope.$digest();
 	};
 	
 	//Set socket event handlers
@@ -29,7 +30,7 @@ angular.module('TSSSF').controller('chatController',
 
 	//Socket interactions
 	$scope.sendChatMessage = function() {
-		$scope.chatConnection.sendMessage('chat.new_message', { message: 'Hi!', channelId: $scope.channel });
+		$scope.chatConnection.sendMessage('chat.new_message', { message: $scope.currentMessage , channelId: $scope.channel });
 		$scope.currentMessage = "";
 	};
 }]);

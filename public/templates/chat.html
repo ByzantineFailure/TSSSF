@@ -1,7 +1,7 @@
 <div ng-controller="chatController">
-	<div ng-repeat="message in messages">
-		{{ message }}
-	</div>
-	<input> {{currentMessage}}</input>
+	<input ng-model="currentMessage"></input>
 	<button ng-click="sendChatMessage()">Send</button>
+	<div ng-repeat="message in messages">
+		{{ message.message }}
+	</div>
 </div>
