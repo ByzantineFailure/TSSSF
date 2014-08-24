@@ -16,14 +16,14 @@ angular.module('TSSSF').controller('chatController', ['baseChannel', '$scope', f
 	
 	//Set socket event handlers
 	$scope.chatConnection.setEvents([
-		{ event: 'new_message', 
+		{ event: 'chat.new_message', 
 		  handler: $scope.getMessage,
 		}
 	]);
 
 	//Socket interactions
 	$scope.sendChatMessage = function() {
-		$scope.chatConnection.sendMessage('new_message', { message: $scope.currentMessage });
+		$scope.chatConnection.sendMessage('chat.new_message', { message: $scope.currentMessage });
 		$scope.currentMessage = "";
 	};
 }]);
