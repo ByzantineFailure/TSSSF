@@ -12,6 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require websocket_rails/main
+//= require lodash
 //= require angular
 //= require main
-//= require_tree .
+//= require config
+//= require_tree ./angular/services
+//= require_tree ./angular/controllers
