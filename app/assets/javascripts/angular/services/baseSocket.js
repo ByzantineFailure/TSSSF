@@ -2,8 +2,8 @@
    A channel connection is a special kind of websocket that will allow the
    server to broadcast to all other connections on the same channel.
 */
-angular.module('TSSSF').factory('baseChannel', [ 'hostname', function baseChannelFactory(hostname) {
-	var baseChannel = {
+angular.module('TSSSF').factory('baseSocket', [ 'hostname', function baseSocketFactory(hostname) {
+	var baseSocket = {
 		dispatcher: undefined,
 		channels: [],		
 		
@@ -138,5 +138,5 @@ angular.module('TSSSF').factory('baseChannel', [ 'hostname', function baseChanne
 		},
 	};
 
-	return baseChannel;
+	return baseSocket;
 }]);
