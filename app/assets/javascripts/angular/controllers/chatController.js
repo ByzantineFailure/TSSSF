@@ -13,9 +13,9 @@ angular.module('TSSSF').controller('chatController',
 	//Socket event handlers
 	$scope.getMessage = function(message) {
 		console.log("Received message reply: " + message.message);
-		$scope.messages.push({ message: message.message, timestamp: new Date() } );
+		$scope.messages.unshift({ message: message.message, timestamp: new Date() } );
 		if($scope.messages.length > MAX_MESSAGES_IN_CHAT) {
-			$scope.messages.shift();
+			$scope.messages.pop();
 		}
 		$scope.$digest();
 	};
