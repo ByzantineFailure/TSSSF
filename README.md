@@ -3,6 +3,14 @@ TSSSF
 
 Angular/Rails implementation of an MLP card game.
 
+Project Structure Notes
+=====
+Angular components are held in app/assets/javascripts/angular/
+
+Angular templates are held in public/templates/
+
+Non-angular folders underneath app/assets/javascripts/angular/ need to be added individually to application.js as //= require_tree entries as requiring ./services before ./controllers is fairly important.
+
 
 Dev Environment Notes
 =====
