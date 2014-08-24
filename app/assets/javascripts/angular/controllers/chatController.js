@@ -1,12 +1,12 @@
 angular.module('TSSSF').controller('chatController', 
-['baseSocket', '$scope', function(baseChannel, $scope) {
+['baseSocket', '$scope', function(baseSocket, $scope) {
 	
 	var MAX_MESSAGES_IN_CHAT = 15;
 
 	$scope.messages = [];
 	$scope.currentMessage = "";
 	$scope.channel = 'chat';
-	$scope.chatConnection = baseChannel.open($scope.channel);
+	$scope.chatConnection = baseSocket.open($scope.channel);
 
 	$scope.chatConnection.openChannels([$scope.channel]);
 	
