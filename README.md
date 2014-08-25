@@ -17,7 +17,7 @@ Folders underneath app/assets/javascripts/angular/ need to be added individually
 
 ##Install RVM
 
-###Installing RVM (Linux): 
+#####Installing RVM on Linux: 
   http://rvm.io/rvm/install
   
   If RVM complains about apt-get, run this
@@ -28,11 +28,11 @@ Folders underneath app/assets/javascripts/angular/ need to be added individually
   
     \curl -sSL https://get.rvm.io | bash -s --autolibs=read-fail
 
-###Installing RVM (Windows -> cygwin, discouraged, probably won't work during bundle install step)
+#####Installing RVM on Windows via cygwin (Windows does not support dev environment)
 
 http://blog.developwithpassion.com/2012/03/30/installing-rvm-with-cygwin-on-windows/
 
-###Installing RVM (Mac OSX,  dunno if this works)
+#####Installing RVM on Mac OSX (untested)
 
 https://jewelrybox.unfiniti.com/
 
@@ -42,7 +42,7 @@ https://jewelrybox.unfiniti.com/
     rvm use 2.1.2
     gem install rails
 
-###Further documentation and gudes on installing rails
+#####Further documentation and gudes on installing rails
 Installing and running rails: http://railsapps.github.io/installing-rails.html
 
 ## Install gems
