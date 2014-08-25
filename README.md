@@ -3,6 +3,8 @@ TSSSF
 
 Angular/Rails implementation of an MLP card game.
 
+Developed in Ruby 2.1.2
+
 #Project Structure Notes
 
 Angular components are held in app/assets/javascripts/angular/
@@ -10,11 +12,6 @@ Angular components are held in app/assets/javascripts/angular/
 Angular templates are held in public/templates/
 
 Folders underneath app/assets/javascripts/angular/ need to be added individually to application.js as //= require_tree entries as requiring ./services before ./controllers is fairly important.
-
-
-#Dev Environment Notes
-
-We will be using Ruby 2.1.2 with Rails 4.  I HIGHLY recommend developing on Linux.  I am fairly certain that our websocket library (websocket-rails) does not run without the hiredis gem installed.
 
 #Dev Environment Setup
 
