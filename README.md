@@ -34,7 +34,9 @@ Installing RVM (Mac OSX): https://jewelrybox.unfiniti.com/
 
 Once you have RVM set up, run:
     rvm install 2.1.2
+    
     rvm use 2.1.2
+    
     gem install rails
 
 Installing and running rails: http://railsapps.github.io/installing-rails.html
