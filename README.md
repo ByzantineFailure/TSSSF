@@ -29,13 +29,13 @@ We will be using Ruby 2.1.2 with Rails 4.  I HIGHLY recommend developing on Linu
   
   then
   
-    \curl -sSL https://get.rvm.io | bash -s --rails --autolibs=read-fail
+    \curl -sSL https://get.rvm.io | bash -s --autolibs=read-fail
 
-###Installing RVM (Windows -> cygwin, discouraged)
+###Installing RVM (Windows -> cygwin, discouraged, probably won't work during bundle install step)
 
 http://blog.developwithpassion.com/2012/03/30/installing-rvm-with-cygwin-on-windows/
 
-###Installing RVM (Mac OSX)
+###Installing RVM (Mac OSX,  dunno if this works)
 
 https://jewelrybox.unfiniti.com/
 
@@ -51,11 +51,13 @@ Installing and running rails: http://railsapps.github.io/installing-rails.html
 ## Install gems
 
 In the base directory of the project
+
     bundle install
   
 ## Run
 
 In the base directory of the project
+
     rails server
 
 #Additional Reference
