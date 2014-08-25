@@ -20,6 +20,10 @@ We will be using Ruby 2.1.2 with Rails 4.  I HIGHLY recommend developing on linu
 I also sincerely recommend installing Ruby through RVM:
 
 Installing RVM (Linux): http://rvm.io/rvm/install
+  If RVM complains about apt-get, run this
+    sudo apt-get install build-essential openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev autoconf libc6-dev libncurses5-dev automake libtool bison subversion
+  then
+    \curl -sSL https://get.rvm.io | bash -s --rails --autolibs=read-fail
 
 Installing RVM (Windows -> cygwin, discouraged):   http://blog.developwithpassion.com/2012/03/30/installing-rvm-with-cygwin-on-windows/
 
