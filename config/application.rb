@@ -19,5 +19,12 @@ module TSSSF
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.middleware.delete Rack::Lock
+
+    config.redis_host = "127.0.0.1"
+    config.redis_port = 6379 
+    #User record TTL in seconds
+    config.user_ttl = 300
+
   end
 end
