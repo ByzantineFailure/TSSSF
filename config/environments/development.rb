@@ -34,6 +34,9 @@ Rails.application.configure do
 
   config.middleware.delete Rack::Lock
 
+  config.redis_host = "127.0.0.1"
+  config.redis_port = 6379
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

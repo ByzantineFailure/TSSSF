@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 	get 'static_pages/index'
 
+  get '/user/check/:user_name', to: 'user#check_user'
+  get '/user/new/:user_name', to: 'user#create_user'
+  get '/user/refresh/:user_name', to: 'user#refresh_user'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

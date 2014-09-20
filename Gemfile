@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 #websocket support
+#this automatically includes redis and hiredis
 gem 'websocket-rails'
 
 # Use ActiveModel has_secure_password
