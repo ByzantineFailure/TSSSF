@@ -1,5 +1,5 @@
 angular.module('TSSSF').controller('chatController', 
-['baseSocket', 'userService', '$scope', function(baseChannel, userService, $scope) {
+['baseSocket', 'userService', '$scope', function(baseSocket, userService, $scope) {
 	
 	var MAX_MESSAGES_IN_CHAT = 15;
 
