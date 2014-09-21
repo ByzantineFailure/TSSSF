@@ -85,7 +85,7 @@ angular.module('TSSSF').service('userService', ["hostname", "userCookieTtl", fun
 	};
 	var getCookieExpiry = function() {
 		var now = new Date();
-		var expiry = now.setMinutes(now.getMinutes() + 5);
+		var expiry = now.setMinutes(now.getMinutes() + userCookieTtl);
 		return expiry
 	};
 
