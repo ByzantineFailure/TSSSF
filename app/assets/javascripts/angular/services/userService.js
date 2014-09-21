@@ -1,5 +1,4 @@
 /* User functionality */
-
 angular.module('TSSSF').service('userService', ["hostname", "userCookieTtl", function UserServiceFactory(hostname, userCookieTtl) {
 	var usernameCookieField = "TSSSF_username";
 	var usernameUuidCookieField = "TSSSF_usernameUuid";
@@ -84,9 +83,9 @@ angular.module('TSSSF').service('userService', ["hostname", "userCookieTtl", fun
 		
 	};
 	var getCookieExpiry = function() {
-		var now = new Date();
-		var expiry = now.setMinutes(now.getMinutes() + userCookieTtl);
-		return expiry
+		var expiry = new Date();
+		expiry.setMinutes(expiry.getMinutes() + userCookieTtl);
+		return expiry.toUTCString();
 	};
 
 	Object.defineProperty(userService, 'username', {
