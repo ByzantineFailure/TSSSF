@@ -81,6 +81,4 @@ class User
 
 		return { :success => true}
 	end
-
-
 end

@@ -3,13 +3,6 @@ require "json"
 require "user"
 
 class UserController < ApplicationController
-	
-	@@redis_host = Rails.application.config.redis_host
-	@@redis_port = Rails.application.config.redis_port
-	
-
-	@@user_ttl = Rails.application.config.user_ttl
-	
 	#Check if the username the client has/wants exists
 	#Return the user's lobby (if it exists) if it does
 	def check_user
