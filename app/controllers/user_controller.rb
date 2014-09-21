@@ -53,4 +53,25 @@ class UserController < ApplicationController
 			format.json {render :json => result }
 		end
 	end
+
+	def user_lobby
+		username = params[:user_name]
+		uuid = params[:uuid]
+		
+		user_check = User.check_user(username, uuid)
+		
+		if user_check[:status] != "uuid_match"
+			puts "Attempted to get lobby for mismatching user"
+
+			respond_to do |format|
+				format.json { render :json => { :success => false, :lobby => "" } }
+			end
+		end
+
+		lobby_name = User.get_lobby(username)
+
+		respond_to do |format|
+			format.json { render :json => { :success => true, :lobby => lobby_name } }
+		end
+	end
 end

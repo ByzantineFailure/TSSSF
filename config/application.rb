@@ -25,6 +25,8 @@ module TSSSF
     config.redis_port = 6379 
     #User record TTL in seconds
     config.user_ttl = 300
-
+    
+    #Lobby record TTL in seconds
+    config.lobby_ttl = 600
   end
 end

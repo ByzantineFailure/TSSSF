@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/user/refresh/:user_name', to: 'user#refresh_user'
   post '/user/create/:user_name', to: 'user#create_user'
   post '/user/destroy/:user_name', to: 'user#destroy_user'
+  get '/user/lobby/:user_name', to: 'user#user_lobby'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

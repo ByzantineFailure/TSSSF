@@ -1,11 +1,10 @@
-class User
-	@@redis_host = Rails.application.config.redis_host
-	@@redis_port = Rails.application.config.redis_port
+require "redis_connection"
 
+class User
 	@@user_ttl = Rails.application.config.user_ttl
-	
+
 	def self.check_user(username, uuid)
-		redis_connection = Redis.new(:host => @@redis_host, :port => @@redis_port)
+		redis_connection = RedisConnection.get_connection
 		user_entry = redis_connection.get("user:#{username}")
 
 		puts "Redis returned #{user_entry}"
@@ -33,7 +32,7 @@ class User
 	end
 	
 	def self.refresh_user(username, uuid)
-		redis_connection = Redis.new(:host => @@redis_host, :port => @@redis_port)	
+		redis_connection = RedisConnection.get_connection
 
 		user_entry = redis_connection.get("user:#{username}");
 		
@@ -44,13 +43,18 @@ class User
 		
 		redis_connection.setex("user:#{username}", @@user_ttl, "#{uuid}");
 		
+		lobby = User.get_lobby
+		if not lobby.nil?
+			redis_connection.setex("user:#{username}:lobby", @@user_ttl, lobby);
+		end
+		
 		puts "Refreshed username #{username}"
 		
 		return { :success => true }
 	end
 
 	def self.create_user(username)
-		redis_connection = Redis.new(:host => @@redis_host, :port => @@redis_port)	
+		redis_connection = RedisConnection.get_connection
 		user_entry = redis_connection.get("user:#{username}");
 		#Check user doesn't already exist in redis (should always call check_user first but preven malicious)
 		if not user_entry.nil?
@@ -69,7 +73,7 @@ class User
 	end
 
 	def self.destroy_user(username, uuid)
-		redis_connection = Redis.new(:host => @@redis_host, :port => @@redis_port)	
+		redis_connection = RedisConnection.get_connection
 		user_entry = redis_connection.get("user:#{username}");
 		
 		if user_entry.nil? or user_entry != uuid
@@ -78,7 +82,24 @@ class User
 		end
 		
 		redis_connection.del("user:#{username}")
+		redis_connection.del("user:#{username}:lobby")
 
 		return { :success => true}
+	end
+
+	def self.get_lobby(username)
+		redis_connection = RedisConnection.get_connection
+		lobby_entry = redis_connection.get("user:#{username}:lobby")
+		return lobby_entry
+	end
+
+	def self.add_user_lobby_entry(username, lobby_name)
+		redis_connection = RedisConnection.get_connection
+		redis_connection.setex("user:#{username}:lobby", @@user_ttl, lobby_name);
+	end
+
+	def self.remove_user_lobby_entry(username, lobby_name)
+		redis_connection = RedisConnection.get_connection
+		redis_connection.del("user:#{username}:lobby");
 	end
 end
