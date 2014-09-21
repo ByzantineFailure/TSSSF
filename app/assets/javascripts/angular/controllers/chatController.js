@@ -1,5 +1,5 @@
 angular.module('TSSSF').controller('chatController', 
-['baseSocket', '$scope', function(baseChannel, $scope) {
+['baseSocket', 'userService', '$scope', function(baseChannel, userService, $scope) {
 	
 	var MAX_MESSAGES_IN_CHAT = 15;
 
@@ -30,7 +30,11 @@ angular.module('TSSSF').controller('chatController',
 
 	//Socket interactions
 	$scope.sendChatMessage = function() {
-		$scope.chatConnection.sendMessage('chat.new_message', { message: $scope.currentMessage , channelId: $scope.channel });
+		$scope.chatConnection.sendMessage('chat.new_message', { message: userService.username + ':  ' + $scope.currentMessage , channelId: $scope.channel });
 		$scope.currentMessage = "";
+	};
+
+	$scope.switchToLogin = function() {
+		$scope.$parent.switchPage('login');	
 	};
 }]);

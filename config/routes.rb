@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   get '/user/check/:user_name', to: 'user#check_user'
   post '/user/refresh/:user_name', to: 'user#refresh_user'
-  post '/user/new/:user_name', to: 'user#create_user'
-  post '/user/destroy/:user_name', to 'user#destroy_user'
+  post '/user/create/:user_name', to: 'user#create_user'
+  post '/user/destroy/:user_name', to: 'user#destroy_user'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

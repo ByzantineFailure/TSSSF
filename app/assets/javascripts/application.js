@@ -17,5 +17,6 @@
 //= require angular
 //= require main
 //= require config
+//= require cookieManager
 //= require_tree ./angular/services
 //= require_tree ./angular/controllers

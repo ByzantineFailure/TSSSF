@@ -1,3 +1,4 @@
 <!-- public/templates/index.html -->
 <a href="/#">index</a>
-<div ng-include src="'../templates/chat.html'"></div>
+<span ng-bind='userService.username'></span>
+<div ng-include='activePage.contentUrl'></div>
