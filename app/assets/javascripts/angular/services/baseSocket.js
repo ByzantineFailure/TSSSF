@@ -136,6 +136,15 @@ angular.module('TSSSF').factory('baseSocket', [ 'hostname', function baseSocketF
 				self.dispatcher.trigger(messageType, data);
 			}
 		},
+		sendSuccessFailureMessage: function(messageType, data, success, failure) {
+			var self = this;
+			if(!self.dispatcher) {
+				console.log("Open the socket before sending messages");
+				return;
+			}
+			console.log("Sending success/fail message " + data.message + " with event " + messageType);
+			self.dispatcher.trigger(messageType, data, success, failure);
+		},
 	};
 
 	return baseSocket;
